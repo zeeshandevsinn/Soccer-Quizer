@@ -97,8 +97,16 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: MyColors.container_grey,
           automaticallyImplyLeading: false,
-          title: Text("League Scores"),
+          title: Text(
+            "League Scores",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+              color: Colors.white,
+            ),
+          ),
           centerTitle: true,
         ),
         body: SafeArea(
@@ -134,10 +142,13 @@ class _HomePageState extends State<HomePage> {
                       ),
                       prefixIcon: Icon(
                         Icons.search,
-                        color: Colors.black38,
+                        color: Colors.black,
+                        size: 25,
                       ),
                       hintText: 'Search league...',
                       hintStyle: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
                         color: Colors.black,
                       ),
                       border: OutlineInputBorder(),
@@ -181,13 +192,17 @@ class _HomePageState extends State<HomePage> {
                                     padding: const EdgeInsets.symmetric(
                                         horizontal: 15, vertical: 10),
                                     decoration: BoxDecoration(
-                                        color: MyColors.container_grey,
-                                        borderRadius: BorderRadius.circular(5),
-                                        boxShadow: const [
-                                          BoxShadow(
-                                              color: Colors.black12,
-                                              blurRadius: 6)
-                                        ]),
+                                      color: Color(0xfa223343).withOpacity(0.8),
+                                      borderRadius: BorderRadius.circular(20),
+                                      boxShadow: const [
+                                        BoxShadow(
+                                          color: Colors.transparent,
+                                          blurRadius: 6,
+                                          // spreadRadius: 5,
+                                          // offset: Offset(0, 4),
+                                        ),
+                                      ],
+                                    ),
                                     child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
@@ -197,8 +212,9 @@ class _HomePageState extends State<HomePage> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             const Text(
-                                              'league name: ',
+                                              'LEAGUE NAME ',
                                               style: TextStyle(
+                                                  fontWeight: FontWeight.w700,
                                                   color: Colors.white),
                                             ),
                                             Spacer(),
@@ -207,6 +223,7 @@ class _HomePageState extends State<HomePage> {
                                                       ['league_name']
                                                   .toString(),
                                               style: const TextStyle(
+                                                  fontWeight: FontWeight.w700,
                                                   color: Colors.white),
                                             ),
                                           ],
@@ -219,8 +236,9 @@ class _HomePageState extends State<HomePage> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             const Text(
-                                              'country name: ',
+                                              'COUNTRY NAME ',
                                               style: TextStyle(
+                                                  fontWeight: FontWeight.w700,
                                                   color: Colors.white),
                                             ),
                                             Spacer(),
@@ -229,6 +247,7 @@ class _HomePageState extends State<HomePage> {
                                                       ['country']['name']
                                                   .toString(),
                                               style: const TextStyle(
+                                                  fontWeight: FontWeight.w700,
                                                   color: Colors.white),
                                             ),
                                           ],
@@ -241,8 +260,9 @@ class _HomePageState extends State<HomePage> {
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             const Text(
-                                              'Stage: ',
+                                              'STAGE ',
                                               style: TextStyle(
+                                                  fontWeight: FontWeight.w700,
                                                   color: Colors.white),
                                             ),
                                             Flexible(
@@ -250,6 +270,8 @@ class _HomePageState extends State<HomePage> {
                                                 child: Text(
                                                   "${liveScoreleaguename[index]['stage'][0]['stage_name'].toString()}",
                                                   style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.w700,
                                                       color: Colors.white),
                                                   overflow:
                                                       TextOverflow.ellipsis,
@@ -267,8 +289,9 @@ class _HomePageState extends State<HomePage> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             const Text(
-                                              'Team Home: ',
+                                              'TEAM HOME ',
                                               style: TextStyle(
+                                                  fontWeight: FontWeight.w700,
                                                   color: Colors.white),
                                             ),
                                             Spacer(),
@@ -279,6 +302,7 @@ class _HomePageState extends State<HomePage> {
                                                       ['teams']['home']['name']
                                                   .toString(),
                                               style: const TextStyle(
+                                                  fontWeight: FontWeight.w700,
                                                   color: Colors.white),
                                             ),
                                           ],
@@ -291,8 +315,9 @@ class _HomePageState extends State<HomePage> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             const Text(
-                                              'Team Away: ',
+                                              'TEAM AWAY ',
                                               style: TextStyle(
+                                                  fontWeight: FontWeight.w700,
                                                   color: Colors.white),
                                             ),
                                             Spacer(),
@@ -303,6 +328,7 @@ class _HomePageState extends State<HomePage> {
                                                       ['teams']['away']['name']
                                                   .toString(),
                                               style: const TextStyle(
+                                                  fontWeight: FontWeight.w700,
                                                   color: Colors.white),
                                             ),
                                           ],
@@ -315,8 +341,9 @@ class _HomePageState extends State<HomePage> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             const Text(
-                                              'Matches Time: ',
+                                              'MATCHES TIME ',
                                               style: TextStyle(
+                                                  fontWeight: FontWeight.w700,
                                                   color: Colors.white),
                                             ),
                                             Spacer(),
@@ -326,6 +353,7 @@ class _HomePageState extends State<HomePage> {
                                                       ['matches'][0]['time']
                                                   .toString(),
                                               style: const TextStyle(
+                                                  fontWeight: FontWeight.w700,
                                                   color: Colors.white),
                                             ),
                                           ],
@@ -338,8 +366,9 @@ class _HomePageState extends State<HomePage> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             const Text(
-                                              'Matches Date: ',
+                                              'MATCHES DATE ',
                                               style: TextStyle(
+                                                  fontWeight: FontWeight.w700,
                                                   color: Colors.white),
                                             ),
                                             Spacer(),
@@ -349,6 +378,7 @@ class _HomePageState extends State<HomePage> {
                                                       ['matches'][0]['date']
                                                   .toString(),
                                               style: const TextStyle(
+                                                  fontWeight: FontWeight.w700,
                                                   color: Colors.white),
                                             ),
                                           ],
@@ -361,8 +391,9 @@ class _HomePageState extends State<HomePage> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             const Text(
-                                              'Home Win Odds: ',
+                                              'HOME WIN ODDS ',
                                               style: TextStyle(
+                                                  fontWeight: FontWeight.w700,
                                                   color: Colors.white),
                                             ),
                                             Spacer(),
@@ -373,6 +404,7 @@ class _HomePageState extends State<HomePage> {
                                                       ['match_winner']['home']
                                                   .toString(),
                                               style: const TextStyle(
+                                                  fontWeight: FontWeight.w700,
                                                   color: Colors.white),
                                             ),
                                           ],
@@ -385,8 +417,9 @@ class _HomePageState extends State<HomePage> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             const Text(
-                                              'Away Win Odds: ',
+                                              'AWAY WIN ODDS ',
                                               style: TextStyle(
+                                                  fontWeight: FontWeight.w700,
                                                   color: Colors.white),
                                             ),
                                             Spacer(),
@@ -397,6 +430,7 @@ class _HomePageState extends State<HomePage> {
                                                       ['match_winner']['away']
                                                   .toString(),
                                               style: const TextStyle(
+                                                  fontWeight: FontWeight.w700,
                                                   color: Colors.white),
                                             ),
                                           ],
@@ -409,8 +443,9 @@ class _HomePageState extends State<HomePage> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             const Text(
-                                              'Draw: ',
+                                              'DRAW ',
                                               style: TextStyle(
+                                                  fontWeight: FontWeight.w700,
                                                   color: Colors.white),
                                             ),
                                             Spacer(),
@@ -421,6 +456,7 @@ class _HomePageState extends State<HomePage> {
                                                       ['match_winner']['draw']
                                                   .toString(),
                                               style: const TextStyle(
+                                                  fontWeight: FontWeight.w700,
                                                   color: Colors.white),
                                             ),
                                           ],

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:soccer_quizzer/components/article_screen.dart';
+import 'package:soccer_quizzer/components/quiz_screen_league.dart';
+import 'package:soccer_quizzer/utils/my_colors.dart';
 
 class SportsFootballScreen extends StatefulWidget {
   const SportsFootballScreen({super.key});
@@ -27,6 +29,12 @@ class _SportsFootballScreenState extends State<SportsFootballScreen> {
     "images/atrical 03.png",
     "images/atrical 04.png"
   ];
+  @override
+  void dispose() {
+    setState(() {});
+    // TODO: implement dispose
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,16 +42,24 @@ class _SportsFootballScreenState extends State<SportsFootballScreen> {
     var size = MediaQuery.of(context).size * 1;
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: MyColors.container_grey,
           centerTitle: true,
           automaticallyImplyLeading: false,
-          title: Text('Soccer Articles'),
+          title: Text(
+            'Soccer Articles',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+              color: Colors.white,
+            ),
+          ),
         ),
         body: SafeArea(
             child: SingleChildScrollView(
           child: Container(
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage("images/bg.png"), fit: BoxFit.fill)),
+                    image: AssetImage("images/bg 1.jpg"), fit: BoxFit.fill)),
             child: Padding(
               padding: const EdgeInsets.all(12.0),
               child: Column(
@@ -60,9 +76,10 @@ class _SportsFootballScreenState extends State<SportsFootballScreen> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (_) => ArticleScreen(
-                                        articleImage:
-                                            ArticleImage[i].toString())));
+                                    builder: (_) => QuizLeagueScreen(
+                                          index: i,
+                                          images: ContainerImage[i],
+                                        )));
                           },
                           child: Container(
                             height: 100,
@@ -80,8 +97,10 @@ class _SportsFootballScreenState extends State<SportsFootballScreen> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (_) => ArticleScreen(
-                                        articleImage: ArticleImage[i + 1])));
+                                    builder: (_) => QuizLeagueScreen(
+                                          images: ContainerImage[i + 1],
+                                          index: i + 1,
+                                        )));
                           },
                           child: Container(
                             height: 100,

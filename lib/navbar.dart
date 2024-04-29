@@ -4,6 +4,7 @@ import 'package:soccer_quizzer/Screens/home.dart';
 import 'package:soccer_quizzer/Screens/quiz.dart';
 import 'package:soccer_quizzer/Screens/setting.dart';
 import 'package:soccer_quizzer/Screens/sports_football_screen.dart';
+import 'package:soccer_quizzer/utils/my_colors.dart';
 
 class NavBarPage extends StatefulWidget {
   const NavBarPage({Key? key}) : super(key: key);
@@ -34,7 +35,7 @@ class _NavBarPageState extends State<NavBarPage> {
       body: pages[current_index],
       bottomNavigationBar: CurvedNavigationBar(
           backgroundColor: Colors.white,
-          color: Colors.teal.shade600,
+          color: MyColors.container_grey,
           onTap: OnTapped,
           items: <Widget>[
             Icon(
